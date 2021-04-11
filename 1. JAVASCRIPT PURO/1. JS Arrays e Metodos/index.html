@@ -9,14 +9,18 @@
 </head>
 <body>
  
-	<h3>Exemplo JavaScript - ARRAY UNIDIMENSIONAL (VETOR)</h3>
+	<h3>Meus Exemplos JavaScript - ARRAYS VETOR E MATRIZES (By Volnei Ramos)</h3>
 	
 	<script>
 	 
-	 /*-------- ARRAY UNIDIMENSIONAL (VETOR)  ----------*/
+	 /*-------- ARRAYS (VETOR e MATRIZES)  ----------*/
 	 
 	 /* 
-	 1.1 Declaração de um array:
+	 1.0 Declaração de um array unidimensional (vetor):
+	 var meuArray = new Array(); OU
+	 var meuArray = [];
+	 
+	 1.1 Declaração de um array bidimensional (matriz):
 	 var meuArray = new Array(); OU
 	 var meuArray = [];
 	 
@@ -144,6 +148,46 @@
       var itens3 = ["G","H","I"];	  
       bau = itens1.concat(itens2.concat(itens3));	  
 	  mostrarArray(bau);
+	  
+	/*------------------------EXEMPLOS DE ARRAYS MATRIZES----------------------------*/
+	
+	//11. EXEMPLO  matrizes
+	  document.write("<br/><hr/><br/>");
+	  document.write("Exemplo 11 MATRIZES <br/>");	  
+	
+	var item1=["prego",24];
+	    item2=["parafuso",50];
+		item3=["fita isolante",10];
+		
+	var caixa = [];
+	
+	caixa.push(item1);
+	caixa.push(item2);
+	caixa.push(item3);
+	
+	 //criei uma function sem retorno so para dar um document.write para simplificar a digitação da matriz.
+	function mostrarArrayMatriz1(){
+	   for(var i=0; i < caixa.length; i++){	     
+		   document.write("item da minha caixa: " + caixa[i][0] + " - "  + caixa[i][1] + "<br/>");		 	    	  
+	   }
+	 }
+	 
+    function mostrarArrayMatriz2(){
+	   for(var i=0; i < caixa.length; i++){
+	     for(var ii=0; ii < caixa.length-1; ii++){
+		   document.write("item da minha caixa: " + caixa[i][ii] + "<br/>");
+		 }	    	  
+	   }
+	 }
+	 
+	 document.write("tamanho de item1: "+item1.length+ "<br/>");
+	 document.write("tamanho de caixa: "+caixa.length+ "<br/>");
+	 
+	 document.write("---- um for <br/>");
+	 mostrarArrayMatriz1(caixa);
+	 document.write("---- dois for <br/>");
+	 mostrarArrayMatriz2(caixa);
+	 
       	  
 	  
 	 
