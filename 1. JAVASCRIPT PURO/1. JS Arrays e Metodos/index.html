@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8"/>
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
+	<title>MEUS EXEMPLOS JAVA SCRIPT PURO</title>
+	<link href="css/meuExterno-stylesheet.css" rel="stylesheet"/>
+	<script src="scripts/meuExterno-script.js"></script>
+</head>
+<body>
+ 
+	<h3>Exemplo JavaScript - ARRAY UNIDIMENSIONAL (VETOR)</h3>
+	
+	<script>
+	 
+	 /*-------- ARRAY UNIDIMENSIONAL (VETOR)  ----------*/
+	 
+	 /* 
+	 1.1 Declaração de um array:
+	 var meuArray = new Array(); OU
+	 var meuArray = [];
+	 
+	 1.2 Metodos do Array:
+	     Push: insere elementos no final do array;
+		 Unshift: insere elementos no inicio do array;
+		 Pop: remove o ultimo elemento do array;
+		 shift: remove o primeiro elemento do array;
+		 splice: remove elementos de qualquer lugar do array splice(n1 (inicio da remoçao), n2 (quantos elementos quero remover));
+		 indexOf: verifica se um elemento esta no array retornando a posicao.
+		 sort: faz a ordeção do nosso elemento array.
+		 join: junta todos os elementos de um array numa var como string, mas separadas por virgulas.
+		 concat: junta dois arrays.
+		  
+	 */
+	 
+	 //2. EXEMPLO PUSH.	
+	 var cor1=[];	 
+	  
+	 //2.1 Metodo push(): insere elemento no final do array.
+	 cor1[0]=("branco");    //indice 0.
+	 cor1[1]=("azul");      //indice 0.
+	 cor1.push("vermelho"); //indice 2. 
+
+     document.write("Exemplo 1 push: <br/>");		 
+	 document.write("Exemplo push Array Cor: "+ cor1[0]); //imprimi o "branco".
+	 document.write("<br/>");
+	 document.write("Exemplo push Array Cor: "+ cor1[2]); //imprimi o "vermelho".
+	 
+	 document.write("<br/><hr/><br/>");
+	 
+	 //2.2. Other example.
+	 var itens = ["faca","corda","primeiros socorros","comida"];
+	 var mochila = [];
+	 
+	 mochila.push(itens[3]); //aqui add o indice 3 (comida) no array mochila por push (q na mochila vai ficar no indice 0).
+	 
+	 document.write("Exemplo 2 push (insere elemento no final array: <br/>");
+	 document.write("Exemplo push Array Cor: " + mochila[0]);
+	 
+	 document.write("<br/><hr/><br/>");
+	 
+	//3. EXEMPLO UNSHIFT.
+	 
+	  var bau = ["faca","corda","comida"];	
+
+     //criei uma function sem retorno so para dar um document.write para simplificar a digitação.
+     function mostrarArray(){
+	   for(var i=0; i < bau.length; i++){
+	    document.write("item do meu bau: "+bau[i]+ "<br/>");	  
+	   }
+	 }
+	 
+	  //Mostra o bau antes do metodo unshift.
+	  document.write("Exemplo 3 unshift (insere elemento no inicio array): <br/>");
+	  document.write("--------bau inicial <br/>");	 	  
+	  mostrarArray(bau);	  
+	  bau.unshift("pedra"); //Insere com unshift no inicio do array outro item.	  
+	  document.write("---------bau final <br/>");		  
+	  //Mostra o bau depois do metodo unshift.
+	  mostrarArray(bau);
+	  
+	//4. EXEMPLO POP.
+	  document.write("<br/><hr/><br/>");
+	  document.write("Exemplo 4 Pop (remove o ultimo elemento array): <br/>");
+	  document.write("--------bau final <br/>");	
+      bau.pop(); //Pop: removo o ultimo elemento do array. 	  
+	  mostrarArray(bau);
+	  
+	//5. EXEMPLO SHIFT.
+	  document.write("<br/><hr/><br/>");
+	  document.write("Exemplo 5 shift (remove o primeiro elemento array): <br/>");
+	  document.write("--------bau final <br/>");	
+      bau.shift(); //shift: removo o primeiro elemento do array. 	  
+	  mostrarArray(bau);
+	  
+	//6. EXEMPLO SPLICE.
+	  document.write("<br/><hr/><br/>");
+	  document.write("Exemplo 6 splie (remove qualquer elementos do array): <br/>");
+	   var bau = ["faca","corda","comida", "fosforo","anzol","linha"];	
+	  document.write("--------bau inicial <br/>");	 	  
+	  mostrarArray(bau);	
+	  document.write("--------bau final <br/>");	
+      bau.splice(1,2); //shift: a partir do indice 1, removo 2 elemento do array. 	  
+	  mostrarArray(bau);
+	  
+	//7. EXEMPLO IndexOf.
+	  document.write("<br/><hr/><br/>");
+	  document.write("Exemplo 7 indexOf (verifica se um elemento esta no array retornando a posição): <br/>");
+	   var bau = ["faca","corda","comida", "fosforo","anzol","linha"];	
+	  document.write("--------bau inicial <br/>");	 	  
+	  mostrarArray(bau);	
+	  	
+      document.write("posição do item comida é: "+bau.indexOf("comida")+"  |  "); //indexof: verifica se o elemento esta no array retornando sua posição ou índice.
+      document.write("posição do item diamante é: "+bau.indexOf("diamante")); 
+
+    //8. EXEMPLO sort.
+	  document.write("<br/><hr/><br/>");
+	  document.write("Exemplo 8 sort - faz a ordenação de strings elemento array");	  
+      var bau = ["faca","corda","comida", "fosforo","anzol","linha"];		   
+	  document.write("--------bau array de strings inicial <br/>");	 	  
+	  mostrarArray(bau);
+	  document.write("--------bau array de strings final com sort (ordenado) inicial <br/>");	
+      bau.sort(); //ordena os elementos do array - se quiser fazer ao contrario deve usar 1 o Sort (ordenar) depois o reverse: comando bau.reverse();	  
+	  mostrarArray(bau);
+      bau = [2,5,1,0,8,3];
+      document.write("--------bau array de numeros inicial <br/>");	 	  
+	  mostrarArray(bau);      
+      document.write("--------bau array de numeros final com sort (ordenado <br/>");
+      bau.sort();  //ordena os elementos do array - se quiser fazer ao contrario deve usar 1 o Sort (ordenar) depois o reverse: comando bau.reverse();	
+	  mostrarArray(bau);
+  
+	//9. EXEMPLO  join: junta todos os elementos de um array numa var como string, mas separadas por virgulas.	
+	  document.write("<br/><hr/><br/>");
+	  document.write("Exemplo 9 join - junta e transforma todos elementos de uma array como string separadas por virgulas <br/>");	  
+      var numero1 = [2,50,100,45,3];
+      var numero2 = numero1.join();	  
+	  document.write("var numero2: "+numero2+ "<br/>");
+
+    //10. EXEMPLO  concat: concatena arrays.	
+	  document.write("<br/><hr/><br/>");
+	  document.write("Exemplo 10 concat - concatena arrays <br/>");	  
+      var itens1 = ["A","B","C"];
+      var itens2 = ["D","E","F"];
+      var itens3 = ["G","H","I"];	  
+      bau = itens1.concat(itens2.concat(itens3));	  
+	  mostrarArray(bau);
+      	  
+	  
+	 
+	 
+	 
+	
+	 
+	 
+	 
+	 
+	 
+	
+	
+	</scripT>
+ 
+</body>
+</html>
