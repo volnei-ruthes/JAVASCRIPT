@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8"/>
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
+	<title>MEUS EXEMPLOS JAVA SCRIPT PURO</title>	
+</head>
+<body>
+ 
+	<h3>Meus Exemplos JavaScript - TRATAMENTO DE ERROS TRY CATCH FINALLY (By Volnei Ramos)</h3>
+	
+	<script>
+	 
+	 /*-------- TRATAMENTO DE ERROS EM JAVASCRIPT - TRY CATCH ----------*/
+	 
+       //EXEMPLO 01. TRY CATCH.
+	   try{
+		  
+          document.writeeeeeeee("olá mundo!");
+		  
+		}catch(e){
+		
+		  document.write("Erro!");
+		  console.log("Messangem de erro: "+e.message);
+		
+		}
+		
+		// OBS: No JavaScript a divisão por zero não gera erro, pq o JavaScript já trata isso (mostra: infinity).
+
+		
+		//EXEMPLO 02. GERANDO UMA EXCEÇÃO E FINALLY.
+		var numero; //vamos definir essa var como recebendo no máximo até 10.
+		
+		try{
+		
+		  numero = prompt("Digite um valor...");
+		  
+		  if(numero > 10){ //se passar de 10 gera a minha exeção através do THROW.
+		    throw new Error("Valor invalido! não pode ser maior que 10");
+		  }	
+		  
+		  document.write(numero);
+		
+		}catch(e){
+		
+		  document.write(e.message);
+		  
+		}finally{
+		
+		   document.write("  Esse finally executará independente de erro ou não");
+		   
+		}
+	  
+	 
+	 
+	 
+	
+	 
+	 
+	 
+	 
+	 
+	
+	
+	</scripT>
+ 
+</body>
+</html>
