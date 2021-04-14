@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8"/>
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
+	<title>MEUS EXEMPLOS JAVA SCRIPT PURO</title>	
+</head>
+<body>
+ 
+	<h3>Meus Exemplos JavaScript - getElementById, InnerHTML  (By Volnei Ramos)</h3>
+	
+	<div> 
+	  <p id="paragrafoum"> um texto qualquer </div>
+	  <br/>
+	  <p id="paragrafodois"> um texto qualquer2 </div>	
+	</div>
+	
+	<p id="textocarro">O carro aumentou sua velocidade...</p>	
+	<input type="text" id="cxtexto" value="digite seu nome" />
+	
+	<br/><br/><br/>
+	<a href="#">link 1</a>
+	<a href="#">link 2</a>
+	<a href="#">link 3</a>	
+	
+	<br/><br/><br/>
+	
+	<script>
+	 
+	 /*-------- Manipular Elementos HTML EM JAVASCRIPT - getElementById() InnerHTML, getElementByTagName----------*/
+	 
+	//getElementById() pego determinado elemento pelo id.
+	 
+	//Exemplo 01	 
+    document.getElementById("paragrafoum").style.color="#f00";
+	document.getElementById("paragrafoum").style.fontSize="40px"; 	
+	//Exemplo 02
+	var meuparagrafo = document.getElementById("paragrafodois");
+	meuparagrafo.style.color="blue";
+	meuparagrafo.style.fontSize="40px"; 	
+		
+	//innerHtml() pega ou modifica tags	
+	//Exemplo 03
+	var caixa = document.getElementById("textocarro").innerHTML; //captura o contudo do carro;
+	alert(caixa);	
+	document.getElementById("textocarro").innerHTML="estou alterando essa tag"; //altero o conteudo da tag	
+	
+	//getElementByTagName() retorna elementos da tag. retorna em forma de vetor (todos os elementos).	
+	//exemplo 04
+	var tagsA = document.getElementsByTagName("a");	//captura todos os elementos e retorna o vetor
+	document.write(tagsA[0].innerHTML+" "+tagsA[1].innerHTML);
+	
+	for(var i=0; i<tagsA.length; i++){
+	 tagsA[i].style.fontSize="30px";
+	}
+	
+	//tagsA[i].innerHTML = "novo texto";
+	
+	var tagsA2 = document.getElementsByTagName("a")[2];	//captura todos os elementos e retorna apenas a posição do vetor.
+	document.write(tagsA2.innerHTML); 
+	
+	
+	//OBS: se usar o * no getElementByTagName("*") vai pegar todos os elementos da pagina
+	 
+	
+	
+	</script>
+ 
+</body>
+</html>
